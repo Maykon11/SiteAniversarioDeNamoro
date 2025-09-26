@@ -424,7 +424,7 @@ body {
 .gallery-scroll {
   display: flex;
   gap: 3rem; /* espaçamento entre fotos */
-  animation: scrollLeft 20s linear infinite;
+  animation: scrollLeft 10s linear infinite;
 }
 
 .gallery-scroll figure {
