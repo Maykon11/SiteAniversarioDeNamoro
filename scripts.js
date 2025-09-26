@@ -154,3 +154,27 @@ function createHeartParticle() {
 
 // cria partículas lentamente para efeito discreto
 setInterval(createHeartParticle, 800);
+
+const menuBtn = document.getElementById("menu-btn");
+
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("open");
+});
+
+const sideMenu = document.getElementById("side-menu");
+
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("open");
+  sideMenu.classList.toggle("open");
+});
+
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('shrink');
+        sideMenu.classList.add('shrink'); // move o menu para cima
+    } else {
+        header.classList.remove('shrink');
+        sideMenu.classList.remove('shrink'); // volta para a posição normal
+    }
+});

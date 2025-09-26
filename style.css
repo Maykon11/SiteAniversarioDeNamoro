@@ -348,24 +348,58 @@ body {
 }
 .site-title {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.8rem;
-  background: linear-gradient(45deg, #fff, #ffdde1, #ff6fae);
+  font-size: 3.2rem;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #fff 0%, #ffb6d9 40%, #ff6fae 100%);
   background-clip: text;
   -webkit-background-clip: text;
-  color: white;
-  text-shadow: 0 0 10px rgba(255,255,255,0.7),
-               0 0 20px rgba(255,111,174,0.6);
-  animation: glowPulse 3s ease-in-out infinite;
+  color: #cc1c5a;
+  -webkit-text-fill-color: #cc1c5a;
+  text-shadow:
+    0 2px 16px #ffb6d9,
+    0 0 32px #ff6fae,
+    2px 2px 8px rgba(255,111,174,0.18),
+    0 0 2px #fff;
+  filter: drop-shadow(0 0 8px #ffb6d9);
+  opacity: 0.92; /* efeito opaco suave */
+  animation: glowPulse 2.2s ease-in-out infinite;
+  position: relative;
 }
+.site-title::after {
+  content: "💖";
+  font-size: 2.6rem;
+  color: #ff6fae;
+  margin-left: 10px;
+  vertical-align: middle;
+  text-shadow: 0 0 22px #ffb6d9, 0 2px 12px #ff6fae, 0 0 4px #fff;
+  animation: heartBeat 1.2s infinite;
+  filter: drop-shadow(0 0 8px #ffb6d9);
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  20% { transform: scale(1.22); }
+  40% { transform: scale(0.97); }
+  60% { transform: scale(1.15); }
+  80% { transform: scale(1); }
+}
+
 .site-subtitle {
-  font-family: 'Montserrat', sans-serif; /* fonte limpa */
-  font-size: 1rem;
-  font-weight: 500;
-  color: #ffe6f0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #cc1c5a;
   font-style: italic;
-  opacity: 0.9;
+  opacity: 0.92; /* efeito opaco suave */
   margin: 0;
-  transition: font-size 0.3s ease;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 8px #ffb6d9, 0 0 4px #fff;
+  transition: font-size 0.3s ease, color 0.3s;
+}
+.site-subtitle:hover {
+  color: #ff6fae;
+  font-size: 1.25rem;
+  text-shadow: 0 2px 12px #ffb6d9, 0 0 8px #fff;
 }
 
 .mute-btn {
@@ -457,31 +491,55 @@ body {
 }
 
 #titulo-galeria {
-  font-family: 'Great Vibes', cursive; /* fonte elegante e romântica */
-  font-size: 2rem; /* tamanho maior para destaque */
-  color: #ff6fae; /* rosa romântico */
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.4rem;
+  color: #ff6fae;
   text-align: center;
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.3); /* leve destaque */
+  margin-bottom: 2rem;
+  text-shadow: 0 0 12px #ffb6d9, 2px 2px 8px rgba(0,0,0,0.18);
   position: relative;
+  letter-spacing: 2px;
+  animation: pulseTituloGaleria 1.8s infinite;
+  transition: transform 0.3s, color 0.3s;
 }
 
-/* Efeito decorativo com linha abaixo do título */
+/* Linha decorativa com brilho */
 #titulo-galeria::after {
   content: "";
   display: block;
-  width: 60px;
-  height: 3px;
-  background: #ff96c7;
-  margin: 10px auto 0;
-  border-radius: 2px;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff96c7 0%, #fff 50%, #ff6fae 100%);
+  margin: 12px auto 0;
+  border-radius: 3px;
+  box-shadow: 0 0 12px #ffb6d9, 0 2px 8px #ff6fae;
+  animation: pulseLinhaGaleria 1.8s infinite;
 }
 
-/* Efeito hover opcional */
+/* Efeito hover: aumenta pulsação e muda cor */
 #titulo-galeria:hover {
   color: #ff85b5;
-  transform: scale(1.2);
-  transition: all 0.5s ease-in-out;
+  transform: scale(1.13) rotate(-2deg);
+  text-shadow: 0 0 18px #ffb6d9, 2px 2px 12px rgba(255,111,174,0.25);
+  animation: pulseTituloGaleriaHover 1s infinite;
+}
+
+/* Pulsação suave do título */
+@keyframes pulseTituloGaleria {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 12px #ffb6d9, 2px 2px 8px rgba(0,0,0,0.18);}
+  50% { transform: scale(1.08); text-shadow: 0 0 22px #ffb6d9, 2px 2px 16px #ff6fae;}
+}
+
+/* Pulsação mais forte no hover */
+@keyframes pulseTituloGaleriaHover {
+  0%, 100% { transform: scale(1.13) rotate(-2deg);}
+  50% { transform: scale(1.18) rotate(2deg);}
+}
+
+/* Pulsação da linha decorativa */
+@keyframes pulseLinhaGaleria {
+  0%, 100% { box-shadow: 0 0 12px #ffb6d9, 0 2px 8px #ff6fae;}
+  50% { box-shadow: 0 0 24px #ffb6d9, 0 2px 16px #ff6fae;}
 }
 
 #particle-container {
@@ -540,3 +598,103 @@ body {
   }
 }
 
+/* Botão menu hambúrguer */
+.menu-btn {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1000; /* sempre na frente */
+}
+
+.menu-btn span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #fff; /* cor das barrinhas */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-btn.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.side-menu {
+  position: fixed;
+  top: 0%;
+  padding-top: 10%;
+  margin: 0;
+  right: -250px;
+  width: 250px;
+  bottom: 0;
+  background: linear-gradient(180deg, #ffb6d9, #ff8cc6); /* rosa suave em degradê */
+  color: #fff;
+  transition: right 0.4s ease, box-shadow 0.4s ease,transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 999;
+  height: 100%;
+  overflow-y: auto;
+  border-left: 2px solid #fff; /* borda clara */
+  box-shadow: -5px 0 15px rgba(255, 255, 255, 0.7), 
+              inset 0 0 10px rgba(255, 255, 255, 0.5); /* efeito neve/brilho */
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+/* Estilizando os links */
+.side-menu ul li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 12px 25px;
+  margin: 10px 15px; /* espaço entre os links */
+  border-radius: 15px; /* bordas fofinhas */
+  background: rgba(255, 255, 255, 0.1); /* leve fundo transparente */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3); /* efeito de profundidade leve */
+  text-align: center;
+}
+.side-menu ul li a:hover {
+  background: rgba(255, 255, 255, 0.3); /* fundo mais claro */
+  color: #ff1a8c; /* rosa vibrante */
+  transform: translateX(5px); /* leve deslocamento para a direita */
+  box-shadow: 0 6px 10px rgba(255, 255, 255, 0.5); /* aumenta brilho */
+}
+
+/* Menu aberto */
+.side-menu.open {
+  right: 0;
+}
+
+/* Barra de rolagem customizada */
+.side-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.side-menu::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #fff;
+}
+
+.side-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+.side-menu.shrink {
+  transform: translateY(-5%); /* sobe 20px em relação à posição inicial */
+}
