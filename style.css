@@ -329,7 +329,7 @@ body {
   backdrop-filter: blur(10px);
 
   /* limitar altura para caber em telas pequenas */
-  max-height: 22vh;
+  max-height: 44vh;
   overflow: hidden;
 }
 
