@@ -318,18 +318,22 @@ body {
   backdrop-filter: blur(10px);
 
 }
+.site-header.shrink {
+  padding: 0.5rem 0.5rem; 
+  font-size: 1.2rem; /* reduz também a fonte ao encolher */
+}
+
 @media (max-width: 600px) {
   .site-header {
-    padding: 1rem 0.8rem;       /* padding menor */
+    padding: 1rem 0.8rem;
+    font-size: 1.2rem; /* fonte menor no celular */
     border-bottom-left-radius: 1.2rem; 
     border-bottom-right-radius: 1.2rem;
-    font-size: 0.9rem;          /* texto menor */
   }
 
-  .site-header.shrink {
-    padding: 0.4rem 0.4rem;     /* menor ainda ao encolher */
-  }
+  
 }
+
 
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
@@ -706,3 +710,4 @@ body {
 .side-menu.shrink {
   transform: translateY(-5%); /* sobe 20px em relação à posição inicial */
 }
+
