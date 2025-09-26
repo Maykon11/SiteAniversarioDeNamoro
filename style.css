@@ -1,0 +1,542 @@
+/* styles.css — Estilos principais para o site de 1 ano de namoro */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fffafc;
+  padding-top: 120px; /* ajuste conforme a altura do header */
+  
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+
+
+
+/* Hero */
+.hero {
+  padding: 3rem 1rem;
+  background: #ffe8f1;
+}
+
+.hero-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-photo {
+  flex: 1 1 300px;
+  max-width: 350px;
+  border-radius: 1rem;
+  /* Moldura criativa */
+  border: 4px solid #ffb6c1;       /* contorno rosa suave */
+  padding: 6px;
+  box-shadow: 
+    0 4px 15px rgba(0,0,0,0.2),   /* sombra externa */
+    inset 0 0 10px rgba(255,182,193,0.4); /* sombra interna leve */
+  background-color: #fffafc;       /* fundo da foto */
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.hero-photo:hover {
+  transform: scale(1.07);
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.35),
+    inset 0 0 15px rgba(255,182,193,0.5);
+  border-color: #ff69b4; /* muda levemente a cor da borda */
+}
+
+.hero-text {
+  flex: 2 1 300px;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #cc1c5a;
+}
+
+.hero-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  background: #ff6fae;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #cc1c5a;
+}
+
+/* Timeline */
+/* Seção timeline */
+.timeline {
+  padding: 3rem 1rem;
+  background: #fff0f6;
+}
+
+.timeline h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #cc1c5a;
+}
+
+/* Lista da timeline */
+.timeline-list {
+  position: relative;
+  list-style: none;
+  padding-left: 2rem;
+}
+
+/* Linha vertical */
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 4px;
+  height: 100%;
+  background: #ff6fae;
+  border-radius: 2px;
+}
+
+/* Cada item da timeline */
+.timeline-list li {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  opacity: 0; /* invisível para animação */
+  transform: translateX(-20px);
+  transition: all 0.6s ease;
+}
+
+/* Ponto da timeline */
+.timeline-list li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 20px;
+  height: 20px;
+  background: #ff6fae;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255,111,174,0.6);
+}
+
+/* Conteúdo do evento */
+.timeline-list li strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: #cc1c5a;
+}
+
+.timeline-list li .time {
+  display: block;
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-list li p {
+  margin: 0;
+}
+
+/* Classe que mostra o item ao aparecer na tela */
+.timeline-list li.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+.time {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* Galeria */
+.gallery {
+  padding: 3rem 1rem;
+  background: #ffe8f1;
+}
+
+.gallery h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #cc1c5a;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.gallery figcaption {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Mensagens */
+.messages {
+  padding: 3rem 1rem;
+  background: #fff;
+}
+
+.messages h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #cc1c5a;
+}
+
+.msg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.msg-form input,
+.msg-form textarea {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.msg-form button {
+  align-self: flex-start;
+}
+
+.msg-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.msg {
+  background: #ffe8f1;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.msg h4 {
+  margin-bottom: 0.5rem;
+  color: #cc1c5a;
+}
+
+/* Rodapé */
+.site-footer {
+  background: #ff6fae;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  
+  /* Remove border-radius para evitar que apareça branco ao scroll */
+  border-radius: 0; 
+  
+  /* Sombra opcional para destaque */
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
+
+  /* Largura total */
+  width: 100%;
+}
+
+/* Links do footer */
+.site-footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  
+
+  /* Gradiente animado */
+  
+  background: rgba(255, 111, 174, 0.6);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  
+  /* Cantos arredondados somente na parte inferior */
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  
+  /* Sombra para dar profundidade */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+  transition: all 0.3s ease;
+
+  backdrop-filter: blur(10px);
+
+}
+.site-header.shrink {
+  padding: 0.5rem 0.5rem; /* reduz o padding */
+}
+
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.site-footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h2 {
+    font-size: 1.6rem;
+  }
+}
+.site-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  background: linear-gradient(45deg, #fff, #ffdde1, #ff6fae);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: white;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7),
+               0 0 20px rgba(255,111,174,0.6);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+.site-subtitle {
+  font-family: 'Montserrat', sans-serif; /* fonte limpa */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffe6f0;
+  font-style: italic;
+  opacity: 0.9;
+  margin: 0;
+  transition: font-size 0.3s ease;
+}
+
+.mute-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.mute-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+#relationship-timer {
+  font-family: 'Great Vibes', cursive; /* fonte romântica */
+  font-size: 1rem; /* menor que antes */
+  color: #ffe6f0;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  background: rgba(255, 111, 174, 0.2);
+  padding: 0.3rem 0.8rem; /* menor padding */
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 0.3rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* efeito ao passar o mouse */
+#relationship-timer:hover {
+  transform: scale(1.05);
+  background: rgba(255, 111, 174, 0.35);
+}
+
+/* destaque do tempo dentro do texto */
+#relationship-timer span {
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 1px 1px 6px rgba(255,111,174,0.8);
+}
+
+
+
+/* Container da galeria */
+.gallery-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+
+.gallery-scroll {
+  display: flex;
+  gap: 3rem; /* espaçamento entre fotos */
+  animation: scrollLeft 20s linear infinite;
+}
+
+.gallery-scroll figure {
+  flex: 0 0 auto;
+  width: 200px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-scroll figure:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+.gallery-scroll figcaption {
+  font-family: 'Montserrat', sans-serif; /* fonte moderna e legível */
+  font-weight: 700; /* negrito */
+  font-size: 0.9rem; /* ajuste conforme desejar */
+  color: #ec0a0a; /* cor suave e romântica */
+  text-align: center;
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3); /* leve destaque */
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* vai depender de quantos itens você tiver */
+  }
+}
+
+#titulo-galeria {
+  font-family: 'Great Vibes', cursive; /* fonte elegante e romântica */
+  font-size: 2rem; /* tamanho maior para destaque */
+  color: #ff6fae; /* rosa romântico */
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3); /* leve destaque */
+  position: relative;
+}
+
+/* Efeito decorativo com linha abaixo do título */
+#titulo-galeria::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #ff96c7;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Efeito hover opcional */
+#titulo-galeria:hover {
+  color: #ff85b5;
+  transform: scale(1.2);
+  transition: all 0.5s ease-in-out;
+}
+
+#particle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1; /* atrás do conteúdo */
+}
+
+/* coração em CSS puro */
+.particle {
+  position: absolute;
+  width: 12px; 
+  height: 12px;
+  background-color: #ff6fae;
+  transform: rotate(-45deg);
+  animation: floatUp linear infinite;
+  opacity: 0.6;
+}
+
+.particle::before,
+.particle::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #ff6fae;
+  border-radius: 50%;
+}
+
+.particle::before {
+  top: -6px;
+  left: 0;
+}
+
+.particle::after {
+  top: 0;
+  left: 6px;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translate(var(--x-start, 0vw), 100vh) rotate(-45deg) scale(var(--scale,1));
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(var(--x-end, 0vw), -10vh) rotate(-45deg) scale(var(--scale,1));
+    opacity: 0;
+  }
+}
+

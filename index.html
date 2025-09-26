@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Aniversário de namoro🧡</title>
+        <!-- Troque o caminho abaixo quando adicionar o CSS separado -->
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Adicione no <head> -->
+
+        <!-- Meta tags para redes sociais -->
+        <meta property="og:title"
+            content="1 Ano juntos — [Seu nome] & [Nome dela]">
+        <meta property="og:description"
+            content="Comemorando nosso primeiro ano juntos.">
+        <meta property="og:image" content="assets/hero.jpg">
+    </head>
+    <body>
+        <audio id="bg-music" autoplay loop>
+            <source src="/audio/song.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Header simples com nome do casal e data -->
+        <header class="site-header">
+            <div class="container">
+
+                <h1 class="site-title">Maykon ❤️ Evellyn</h1>
+                <p class="site-subtitle">1 ano juntos — <time
+                        datetime="29-09-2025">29 de setembro de 2025</time></p>
+                <button id="mute-btn" class="mute-btn">🔊</button>
+            </div>
+        </header>
+
+        <!-- Hero/banner principal -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <img src="assets/foto_do_casal.png" alt="Foto do casal"
+                    class="hero-photo" />
+                <div class="hero-text">
+                    <h2>Um ano de memórias</h2>
+                    <p>Obrigado por cada sorriso, cada abraço e cada momento ao
+                        seu lado. Que nosso amor continue crescendo a cada dia
+                        meu amor!</p>
+                    <!-- Botão que pode abrir uma seção de mensagens ou um modal -->
+                    <a href="#mensagens" class="btn">Deixe uma mensagem</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline (pequena linha do tempo com eventos marcantes) -->
+        <section id="timeline" class="timeline">
+            <div class="container">
+                <h3>Nossa história</h3>
+                <ol class="timeline-list">
+                    <li>
+                        <strong>O início de tudo</strong>
+                        <span class="time">— 11/09/2024</span>
+                        <p>Foi o nosso primeiro encontro, o dia em que pude
+                            admirar sua beleza pela primeira vez, ouvir sua
+                            risada encantadora e me perder na doçura da sua
+                            voz.</p>
+                    </li>
+                    <li>
+                        <strong>O início do nosso namoro🧡</strong>
+                        <span class="time">— 29/09/2025</span>
+                        <p>Onde foram, o que rolou, alguma lembrança
+                            especial.</p>
+                    </li>
+                    <!-- Duplique/edite itens conforme necessário -->
+                </ol>
+            </div>
+        </section>
+
+        <!-- Galeria de fotos -->
+        <section id="galeria" class="gallery">
+            <div class="container">
+                <h3 id="titulo-galeria">Fotos</h3>
+                <div class="gallery-wrapper">
+                    <div class="gallery-scroll">
+                        <figure><img src="/assets/foto_galeria-1x1.jpg"
+                                alt="Legenda 1"><figcaption>Te
+                                amo</figcaption></figure>
+                        <figure><img src="/assets/foto_galeria2-1x1.jpg"
+                                alt="Legenda 2"><figcaption>Te
+                                amo</figcaption></figure>
+                        <figure><img src="/assets/foto_galeria3-1x1.jpg"
+                                alt="Legenda 3"><figcaption>Te
+                                amo</figcaption></figure>
+                        <figure><img src="/assets/foto_galeria4-1x1.jpg"
+                                alt="Legenda 3"><figcaption>Te
+                                amo</figcaption></figure>
+                        <!-- clones serão adicionados pelo JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mensagens / guestbook -->
+        <section id="mensagens" class="messages">
+            <div class="container">
+                <h3>Deixe uma mensagem</h3>
+                <p>Escreva algo especial para nós — pode ser uma lembrança ou um
+                    voto para o futuro.</p>
+
+                <!-- Formulário simples (sem backend por enquanto) -->
+                <form class="msg-form" action="#" method="POST"
+                    onsubmit="event.preventDefault(); alert('Mensagem enviada (simulação) — depois eu adiciono backend ;)');">
+                    <label for="nome">Seu nome</label>
+                    <input id="nome" name="nome" type="text"
+                        placeholder="Ex.: Maria" required>
+
+                    <label for="texto">Mensagem</label>
+                    <textarea id="texto" name="texto" rows="4"
+                        placeholder="Escreva algo lindo..." required></textarea>
+
+                    <button type="submit" class="btn">Enviar</button>
+                </form>
+
+                <!-- Espaço para mensagens já enviadas (padrão estático, depois pode ser dinâmico) -->
+                <div class="msg-list">
+                    <article class="msg">
+                        <h4>João</h4>
+                        <p>Parabéns, vocês são lindos juntos!</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <div id="particle-container"></div>
+        <!-- Rodapé com créditos e link para voltar ao topo -->
+        <footer class="site-footer">
+            <div class="container">
+                <div id="relationship-timer">
+                    Estamos juntos há <span id="timer">0d 0h 0m 0s</span>
+                </div>
+                <p>Feito com ❤️ por Maykon.</p>
+
+            </div>
+        </footer>
+
+        <!-- Link para o arquivo JS externo (quando quiser que eu gere) -->
+        <script src="scripts.js" defer></script>
+
+        <!--
+    NOTAS RÁPIDAS:
+    - Substitua as imagens na pasta "assets" e atualize as datas/nomes.
+    - Quando quiser eu te passo o CSS (styles.css) e o JS (scripts.js) separados e bem organizados.
+    - Posso também transformar isso em uma página responsiva com animações simples.
+  -->
+    </body>
+</html>
